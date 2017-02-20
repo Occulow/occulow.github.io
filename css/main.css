@@ -24,6 +24,13 @@
     color: rgb(10,10,10);
 }
 
+.promo-caption {
+    font-size: 1.7rem;
+    font-weight: 500;
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+
 /* dark red */
 nav {
     background-color: rgba(0,0,0,.5);
