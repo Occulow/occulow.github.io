@@ -19,7 +19,18 @@
       <nav>
         <div class="nav-wrapper">
           <a href="#top" class="brand-logo nav-logo">Occulow</a>
+          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
           <ul class="right hide-on-med-and-down">
+            <li><a href="#concept">Concept and Motivation</a></li>
+            <li><a href="#competition">Competition</a></li>
+            <li><a href="#requirements">Requirements</a></li>
+            <li><a href="#specifications">Technical Specifications</a></li>
+            <li><a href="#architecture">Architecture</a></li>
+            <li><a href="#interactions">Interactions</a></li>
+            <li><a href="#progress">Progress</a></li>
+            <li><a href="#about">About Us</a></li>
+          </ul>
+          <ul class="side-nav" id="mobile-demo">
             <li><a href="#concept">Concept and Motivation</a></li>
             <li><a href="#competition">Competition</a></li>
             <li><a href="#requirements">Requirements</a></li>
@@ -388,6 +399,10 @@
     <script type="text/javascript">
       $(document).ready(function(){
         $('.scrollspy').scrollSpy({scrollOffset: 100});
+      });
+      $(".button-collapse").sideNav({
+        menuWidth: 200,
+        closeOnClick: true
       });
     </script>
   </body>
