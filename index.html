@@ -486,6 +486,27 @@
             </div>
           </div>
         </div>
+        <div class="divider"></div>
+        <div class="section">
+          <div class="row">
+            <div class="col s6 offset-s6">
+              <h2>March 31, 2017</h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s12 m6">
+              <img class="responsive-img" src="images/final_pcb.png">
+            </div>
+            <div class="col s12 m6">
+              <p class="flow-text">
+                Pictured here is our semi-final PCB design, integrating the SAM L21E MCU and the RN2903/GridEye breakouts. As with the previous print, these are 3 separate boards panelized together into the same print job. The RN2903 and GridEye breakouts are essentially the same, with the only functional change being the addition of large ground planes and through-hole vias in order to provide shielding for the RF components of the LoRa module.
+              </p>
+              <p class="flow-text">
+                The control board features the SAM L21E microcontroller and headers to connect each of the different sensor components by wire. We chose to keep the sensors on separate boards to allow for easy placement and configuration in our final housing. A key feature is that we do not route the 3.3V power lines directly to the headers - instead, power to each breakout module is controlled by a switching transistor through the MCU. This allows us to completely shut off power to all components.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <!-- About -->
