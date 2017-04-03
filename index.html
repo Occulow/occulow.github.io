@@ -358,8 +358,40 @@
           <div class="col s12">
             <div id="interactions" class="center-align scrollspy">
               <h1>Interactions</h1>
-              <p class="flow-text">Coming soon!</p>
             </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col s6">
+            <h2>Sensor Wakeup</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col s12">
+            <img class="responsive-img" src="images/sensor_interaction.png">
+          </div>
+          <div class="col s12">
+            <p class="flow-text">
+              This interaction diagram details the process of waking up the chip to detect a person entering/exiting a room. Most of the time, our MCU will be in a deep sleep running only the PIR sensor. Upon detecting motion in the area, the PIR device will trigger a wakeup for the MCU and then the Grideye. The microcontroller will then begin to sample the Grideye data at 10 FPS, interpreting the 8x8 heatmap as a number of people entering-exiting. Once motion has subsided, the chip will return to the deep sleep state.
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col s6">
+            <h2>Data Flow</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col s12 m12">
+            <img class="responsive-img" src="images/data_interaction.png">
+          </div>
+          <div class="col s12 m12">
+            <p class="flow-text">
+              The data flow interaction diagram is fairly self-explanatory. The MCU will wakeup on a configurable interval and transmit the change in occupancy it has seen since the last transmission. Sending essentially 1 byte allows us to minimize the transmission time and reduce power consumption.
+            </p>
+            <p class="flow-text">
+              The LoRaWAN infrastructure set up by the <a href="http://wise.ece.cmu.edu/">CMU WiSE Lab</a> exposes data sent by clients through an MQTT service. We run a daemon client on our webserver that will automatically subscribe to the data queues of each device setup with our service. Upon receipt of a sensor update, the server persists the change to the database and updates related values.
+            </p>
           </div>
         </div>
       </div>
