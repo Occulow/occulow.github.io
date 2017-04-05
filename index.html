@@ -332,8 +332,13 @@
           <div class="col s12">
             <div id="interactions" class="center-align scrollspy">
               <h1>Use Cases</h1>
-              <p class="flow-text">Coming soon!</p>
             </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col s12 m6">
+            <h2>Environmental control</h2>
+            <p class="flow-text">If an organization can better understand where people are in a building, it can more effectively control the HVAC systems. </p>
           </div>
         </div>
       </div>
@@ -342,10 +347,13 @@
     <div class="section grey lighten-2">
       <div class="container">
         <div class="row">
-          <div class="col s12">
+          <div class="col s10 offset-s1">
             <div id="architecture" class="center-align scrollspy">
               <h1>Architecture</h1>
-              <p class="flow-text">Coming soon!</p>
+              <img class="responsive-img" src="images/architecture.png">
+              <p class="flow-text">
+                This diagram gives a high level overview of the architecture of our sensor system. The "brain" is the Atmel SAM L21E microcontroller, a low-power chip that can drive each of our other components. When motion is detected by the PIR sensor, it will send an interrupt to the SAM chip in order to wake it up from deep sleep. The GridEye infrared camera generates an 8x8 grid of IR pixels at 10 frames per second, sent over I2C back to the microcontroller. All processing is done on-chip, so the only data transmitted through the RN2903 LoRa transceiver are the changes in occupancy.
+              </p>
             </div>
           </div>
         </div>
