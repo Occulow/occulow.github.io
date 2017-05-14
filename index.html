@@ -29,8 +29,8 @@
             <li><a href="#use-cases">Use Cases</a></li>
             <li><a href="#architecture">Architecture</a></li>
             <li><a href="#interactions">Interactions</a></li>
-            <li><a href="#progress">Progress</a></li>
             <li><a href="#about">About Us</a></li>
+            <li><a href="progress.html">Progress</a></li>
           </ul>
         </div>
       </nav>
@@ -44,8 +44,8 @@
       <li><a href="#use-cases">Use Cases</a></li>
       <li><a href="#architecture">Architecture</a></li>
       <li><a href="#interactions">Interactions</a></li>
-      <li><a href="#progress">Progress</a></li>
       <li><a href="#about">About Us</a></li>
+      <li><a href="progress.html">Progress</a></li>
     </ul>
     <!-- Image header and title -->
     <div id="top" class="image-header scrollspy">
@@ -420,212 +420,6 @@
             </p>
           </div>
         </div>
-      </div>
-    </div>
-    <!-- Progress -->
-    <div class="section grey lighten-2">
-      <div class="container">
-        <div class="row">
-          <div class="col s12">
-            <div id="progress" class="center-align scrollspy">
-              <h1>Progress</h1>
-            </div>
-          </div>
-        </div>
-        <div class="section">
-          <div class="row">
-            <div class="col s12 m6 offset-m6">
-              <h2>February 28, 2017</h2>
-            </div>
-          </div>
-          <div class="row valign-wrapper">
-            <div class="col s12 m6">
-              <img class="responsive-img" src="images/grideye.gif">
-            </div>
-            <div class="col s12 m6">
-              <p class="flow-text">
-                After carefully soldering wires onto the tiny SMD pads of the Grid-EYE, we were able to communicate with the device over I2C and capture some live data. The gif to the left shows one person walking back and forth under the sensor while it was held 8 feet off of the ground.
-              </p>
-              <p class="flow-text">
-                This is a promising start - we're now confident that we can determine direction as well as differentiate between multiple people entering/exiting at the same time.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="divider"></div>
-        <div class="section">
-          <div class="row">
-            <div class="col s12 m6">
-              <h2>March 1, 2017</h2>
-            </div>
-          </div>
-          <div class="row valign-wrapper">
-            <div class="col s12 m6">
-              <p class="flow-text">
-                In the interest of rapid prototyping, we designed small breakout boards for each of our three major devices: the PIR motion detector, the Grid-EYE, and the RN2903 LoRaWAN module. The boards will be panelized so that we can break them apart and position them individually.
-              </p>
-              <p class="flow-text">
-                Each board is the simplest possible circuit to control the device, with control/output pins routed to GPIO headers. Each board also needs to be supplied separate power and ground.
-              </p>
-            </div>
-            <div class="col s12 m6">
-              <img class="responsive-img" src="images/breakout.png">
-            </div>
-          </div>
-        </div>
-        <div class="divider"></div>
-        <div class="section">
-          <div class="row">
-            <div class="col s12 m6 offset-m6">
-              <h2>March 18, 2017</h2>
-            </div>
-          </div>
-          <div class="row valign-wrapper">
-            <div class="col s12 m6">
-              <img class="responsive-img" src="images/mqtt-code.png">
-            </div>
-            <div class="col s12 m6">
-              <p class="flow-text">
-                Driving the RN2903 module from a Particle Photon we successfully connected to the LoRaWAN network and were able to publish data messages. 
-              </p>
-              <p class="flow-text">
-                We also implemented an MQTT daemon process on our webserver that subscribes to the RX queue, receives messages from our device, and updates the database. These updates are shown in real time in a simple React-based frontend interface.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="divider"></div>
-        <div class="section">
-          <div class="row">
-            <div class="col s12 m6">
-              <h2>March 22, 2017</h2>
-            </div>
-          </div>
-          <div class="row valign-wrapper">
-            <div class="col s12 m6">
-              <p class="flow-text">
-                A long wait for parts delayed the final breakout boards, but we were finally able to complete each pcb with parts. Each component works as intended, and the small boards allow us to easily test multiple configurations.
-              </p>
-            </div>
-            <div class="col s12 m6">
-              <img class="responsive-img" src="images/breakout-pcbs.jpg">
-            </div>
-          </div>
-        </div>
-        <div class="divider"></div>
-        <div class="section">
-          <div class="row">
-            <div class="col s12 m6 offset-m6">
-              <h2>March 31, 2017</h2>
-            </div>
-          </div>
-          <div class="row valign-wrapper">
-            <div class="col s12 m6">
-              <img class="responsive-img" src="images/final_pcb.png">
-            </div>
-            <div class="col s12 m6">
-              <p class="flow-text">
-                Pictured here is our semi-final PCB design, integrating the SAM L21E MCU and the RN2903/GridEye breakouts. As with the previous print, these are 3 separate boards panelized together into the same print job. The RN2903 and GridEye breakouts are essentially the same, with the only functional change being the addition of large ground planes and through-hole vias in order to provide shielding for the RF components of the LoRa module.
-              </p>
-              <p class="flow-text">
-                The control board features the SAM L21E microcontroller and headers to connect each of the different sensor components by wire. We chose to keep the sensors on separate boards to allow for easy placement and configuration in our final housing. A key feature is that we do not route the 3.3V power lines directly to the headers - instead, power to each breakout module is controlled by a switching transistor through the MCU. This allows us to completely shut off power to all components.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="divider"></div>
-        <div class="section">
-          <div class="row">
-            <div class="col s12 m6">
-              <h2>April 14, 2017</h2>
-            </div>
-          </div>
-          <div class="row valign-wrapper">
-            <div class="col s12 m6">
-              <p class="flow-text">
-                We finally got around to designing a case for our product! It's a rough print and certainly a draft design, but is able to houses all of our components and mount above a door frame. Additionally, we've integrated the full processing pipeline: from getting GridEYE frames to sending counts via LoRaWAN. The software for counting still needs to be tweaked for people counting and sleep2wake via the PIR sensor.
-              </p>
-              <p class="flow-text">
-                We're currently in the process of fixing the PCB design from last update to account for the small errors we made. A slimmer case is also in the works to give all the components a more snug fit and also add slots for a battery pack, indicator LED and power switch.
-              </p>
-            </div>
-            <div class="col s12 m6">
-              <img class="responsive-img" src="images/occulow_integration2.jpg">
-              <img class="responsive-img" src="images/occulow_integration.jpg">
-            </div>
-          </div>
-        </div>
-        <div class="divider"></div>
-        <div class="section">
-          <div class="row">
-            <div class="col s12 m6 offset-m6">
-              <h2>April 31, 2017</h2>
-            </div>
-          </div>
-          <div class="row valign-wrapper">
-            <div class="col s12 m6">
-              <img class="responsive-img" src="images/occulow_components.jpg">
-            </div>
-            <div class="col s12 m6">
-              <p class="flow-text">
-                After one final PCB print run, we completed all of the control and sensor boards. Minor changes were made to the control board,
-                including a dedicated FTDI header, LED indicator, reset button, and a 3.0V LDO voltage regulator in order to account for battery
-                voltage dropoff. We also fixed an error we had in our power domain, where we were suppling power to the transistors from an
-                invalid internal MCU supply.
-              </p>
-          </div>
-        </div>
-        <div class="divider"></div>
-        <div class="section">
-          <div class="row">
-            <div class="col s12 m6">
-              <h2>May 8, 2017</h2>
-            </div>
-          </div>
-          <div class="row valign-wrapper">
-            <div class="col s12 m6">
-              <p class="flow-text">
-                We made use of the power analyzer one final time to capture an energy usage trace of our final product. As expected, our
-                sleep current is around 0.5 mA and the GridEye active current is approximately 5.5 mA. We suspect there are firmware bugs
-                inside of the RN2903 LoRaWAN chip, as we were observing extremely high idle/sleep current draws - on the order of 40 mA, when we
-                are expecting no more than 2 mA for idle and 100 uA for sleep. We resolved this issue by power-gating the RN2903 chip completely.
-                The lifetime of the device ended up being highly dependent on the traffic of the location it was monitoring. We estimated that in
-                a high-traffic area like the library the device would last between 6 and 8 months, but in quieter environments such as an office
-                building it could last up to a year an a half.
-              </p>
-            </div>
-            <div class="col s12 m6">
-              <img class="responsive-img" src="images/power.png">
-            </div>
-          </div>
-        </div>
-        <div class="divider"></div>
-        <div class="section">
-          <div class="row">
-            <div class="col s12 m6 offset-m6">
-              <h2>May 12, 2017</h2>
-            </div>
-          </div>
-          <div class="row valign-wrapper">
-            <div class="col s12 m6">
-              <img class="responsive-img" src="images/occulow_box.jpg">
-              <img class="responsive-img" src="images/occulow_team.jpg">
-            </div>
-            <div class="col s12 m6">
-              <p class="flow-text">
-                On May 12 we presented the final demo of our product to the public and a panel of judges from industry (Bosch, Intel) and 
-                university faculty. Shown in the image is our final integrated design mounted on a test doorframe. This prototype ran
-                on 3 AA batteries (the wire was only used to capture heat map images for the demo), ideally for 8 months to 1.5 years.
-              </p>
-              <p class="flow-text">
-                At the end of the demo session, Occulow was selected by the judges as the best project! We are very proud of what we accomplished,
-                but couldn't have done it without the help of the course staff. Thanks especially to Professor Rowe, Artur, and Craig for all of
-                their support and advice.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
       </div>
     </div>
     <!-- About -->
