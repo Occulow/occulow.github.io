@@ -438,7 +438,7 @@
               <h2>February 28, 2017</h2>
             </div>
           </div>
-          <div class="row">
+          <div class="row valign-wrapper">
             <div class="col s12 m6">
               <img class="responsive-img" src="images/grideye.gif">
             </div>
@@ -459,7 +459,7 @@
               <h2>March 1, 2017</h2>
             </div>
           </div>
-          <div class="row">
+          <div class="row valign-wrapper">
             <div class="col s12 m6">
               <p class="flow-text">
                 In the interest of rapid prototyping, we designed small breakout boards for each of our three major devices: the PIR motion detector, the Grid-EYE, and the RN2903 LoRaWAN module. The boards will be panelized so that we can break them apart and position them individually.
@@ -480,7 +480,7 @@
               <h2>March 18, 2017</h2>
             </div>
           </div>
-          <div class="row">
+          <div class="row valign-wrapper">
             <div class="col s12 m6">
               <img class="responsive-img" src="images/mqtt-code.png">
             </div>
@@ -501,7 +501,7 @@
               <h2>March 22, 2017</h2>
             </div>
           </div>
-          <div class="row">
+          <div class="row valign-wrapper">
             <div class="col s12 m6">
               <p class="flow-text">
                 A long wait for parts delayed the final breakout boards, but we were finally able to complete each pcb with parts. Each component works as intended, and the small boards allow us to easily test multiple configurations.
@@ -519,7 +519,7 @@
               <h2>March 31, 2017</h2>
             </div>
           </div>
-          <div class="row">
+          <div class="row valign-wrapper">
             <div class="col s12 m6">
               <img class="responsive-img" src="images/final_pcb.png">
             </div>
@@ -540,7 +540,7 @@
               <h2>April 14, 2017</h2>
             </div>
           </div>
-          <div class="row">
+          <div class="row valign-wrapper">
             <div class="col s12 m6">
               <p class="flow-text">
                 We finally got around to designing a case for our product! It's a rough print and certainly a draft design, but is able to houses all of our components and mount above a door frame. Additionally, we've integrated the full processing pipeline: from getting GridEYE frames to sending counts via LoRaWAN. The software for counting still needs to be tweaked for people counting and sleep2wake via the PIR sensor.
@@ -562,7 +562,7 @@
               <h2>April 31, 2017</h2>
             </div>
           </div>
-          <div class="row">
+          <div class="row valign-wrapper">
             <div class="col s12 m6">
               <img class="responsive-img" src="images/occulow_components.jpg">
             </div>
@@ -582,13 +582,16 @@
               <h2>May 8, 2017</h2>
             </div>
           </div>
-          <div class="row">
+          <div class="row valign-wrapper">
             <div class="col s12 m6">
               <p class="flow-text">
                 We made use of the power analyzer one final time to capture an energy usage trace of our final product. As expected, our
                 sleep current is around 0.5 mA and the GridEye active current is approximately 5.5 mA. We suspect there are firmware bugs
                 inside of the RN2903 LoRaWAN chip, as we were observing extremely high idle/sleep current draws - on the order of 40 mA, when we
                 are expecting no more than 2 mA for idle and 100 uA for sleep. We resolved this issue by power-gating the RN2903 chip completely.
+                The lifetime of the device ended up being highly dependent on the traffic of the location it was monitoring. We estimated that in
+                a high-traffic area like the library the device would last between 6 and 8 months, but in quieter environments such as an office
+                building it could last up to a year an a half.
               </p>
             </div>
             <div class="col s12 m6">
@@ -603,7 +606,7 @@
               <h2>May 12, 2017</h2>
             </div>
           </div>
-          <div class="row">
+          <div class="row valign-wrapper">
             <div class="col s12 m6">
               <img class="responsive-img" src="images/occulow_box.jpg">
               <img class="responsive-img" src="images/occulow_team.jpg">
@@ -612,10 +615,7 @@
               <p class="flow-text">
                 On May 12 we presented the final demo of our product to the public and a panel of judges from industry (Bosch, Intel) and 
                 university faculty. Shown in the image is our final integrated design mounted on a test doorframe. This prototype ran
-                on 3 AA batteries (the wire was only used to capture heat map images for the demo), ideally for 8 months to 1.5 years. The
-                lifetime of the device ended up being highly dependent on the traffic of the location it was monitoring. We estimated that in
-                a high-traffic area like the library the device would last between 6 and 8 months, but in quieter environments such as an office
-                building it could last up to a year an a half.
+                on 3 AA batteries (the wire was only used to capture heat map images for the demo), ideally for 8 months to 1.5 years.
               </p>
               <p class="flow-text">
                 At the end of the demo session, Occulow was selected by the judges as the best project! We are very proud of what we accomplished,
